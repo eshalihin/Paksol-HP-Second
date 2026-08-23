@@ -43,14 +43,40 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        /* Gambar HP */
-        .card img {
+        /* Label Bagian Media */
+        .media-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #666;
+            margin: 10px 0 6px 0;
+        }
+
+        /* Galeri Foto (Grid 3 Kolom) */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .photo-gallery img {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-            margin-bottom: 15px;
+            height: 90px;
             object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #eee;
+        }
+
+        /* Player Video */
+        .video-container {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 8px;
+            background: #000;
         }
 
         /* Nama HP */
@@ -60,7 +86,7 @@
             color: #000;
         }
 
-        /* Keterangan Spesifikasi */
+        /* Spesifikasi */
         .card ul {
             list-style: none;
             padding: 0;
@@ -75,7 +101,14 @@
             border-bottom: 1px dashed #eee;
         }
 
-        /* Harga HP */
+        /* Harga HP & Tombol WA */
+        .price-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
         .price {
             font-size: 18px;
             font-weight: bold;
@@ -84,6 +117,24 @@
             padding: 8px 12px;
             border-radius: 6px;
             display: inline-block;
+            text-align: center;
+        }
+
+        .btn-wa {
+            display: block;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .btn-wa:hover {
+            background-color: #1eb954;
         }
     </style>
 </head>
@@ -93,12 +144,27 @@
 
     <div class="catalog">
 
-        <!-- Produk 1: OPPO A6t 4G -->
+        <!-- Produk: OPPO A6t 4G -->
         <div class="card">
-            <!-- 1. GAMBAR HP -->
-            <img src="oppo.jpg" alt="OPPO A6t 4G">
             
-            <!-- 2. SPESIFIKASI HP -->
+            <!-- 1. GALERI FOTO -->
+            <div class="media-title">📸 Galeri Foto HP:</div>
+            <div class="photo-gallery">
+                <img src="oppo.jpg" alt="Foto 1">
+                <img src="oppo2.jpg" alt="Foto 2">
+                <img src="oppo3.jpg" alt="Foto 3">
+            </div>
+
+            <!-- 2. VIDEO HP -->
+            <div class="media-title">🎥 Video Kondisi HP:</div>
+            <div class="video-container">
+                <video controls poster="oppo.jpg">
+                    <source src="oppo-video.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutaran video.
+                </video>
+            </div>
+            
+            <!-- 3. NAMA & SPESIFIKASI HP -->
             <h2>OPPO A6t 4G</h2>
             <ul>
                 <li>📱 <b>Layar:</b> 6,75" LCD, 120Hz</li>
@@ -113,10 +179,16 @@
                 <li>🛡️ <b>Garansi:</b> Garansi Nasional Aktif s/d 23 April 2027</li>
             </ul>
 
-            <!-- 3. HARGA HP -->
-            <div class="price">
-                Harga: Rp 1.850.000
+            <!-- 4. HARGA HP & TOMBOL BELI WA -->
+            <div class="price-section">
+                <div class="price">
+                    Harga: Rp 1.850.000
+                </div>
+                <a href="https://wa.me/628998968267?text=Halo%2C%20saya%20berminat%20membeli%20OPPO%20A6t%204G%20harga%20Rp%201.850.000" target="_blank" class="btn-wa">
+                    💬 Beli Sekarang via WhatsApp
+                </a>
             </div>
+
         </div>
 
     </div>
