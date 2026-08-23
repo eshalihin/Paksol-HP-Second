@@ -65,6 +65,12 @@
             object-fit: cover;
             border-radius: 6px;
             border: 1px solid #eee;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .photo-gallery img:active {
+            transform: scale(0.95);
         }
 
         /* Player Video */
@@ -136,6 +142,45 @@
         .btn-wa:hover {
             background-color: #1eb954;
         }
+
+        /* Pop-up Lightbox Foto Zoom */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(255,255,255,0.2);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
@@ -147,12 +192,12 @@
         <!-- Produk: OPPO A6t 4G -->
         <div class="card">
             
-            <!-- 1. GALERI FOTO -->
-            <div class="media-title">📸 Galeri Foto HP:</div>
+            <!-- 1. GALERI FOTO (Klik untuk membesarkan) -->
+            <div class="media-title">📸 Galeri Foto HP (Ketuk foto untuk memperbesar):</div>
             <div class="photo-gallery">
-                <img src="oppo.jpg" alt="Foto 1">
-                <img src="oppo2.jpg" alt="Foto 2">
-                <img src="oppo3.jpg" alt="Foto 3">
+                <img src="oppo.jpg" alt="Foto 1" onclick="openLightbox(this.src)">
+                <img src="oppo2.jpg" alt="Foto 2" onclick="openLightbox(this.src)">
+                <img src="oppo3.jpg" alt="Foto 3" onclick="openLightbox(this.src)">
             </div>
 
             <!-- 2. VIDEO HP -->
@@ -192,6 +237,23 @@
         </div>
 
     </div>
+
+    <!-- Tampilan Pop-up Zoom Gambar -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Zoom Foto">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
