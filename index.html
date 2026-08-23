@@ -3,609 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paksol HPs - Katalog Smartphone Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Paksol HP Second</title>
     <style>
-        :root {
-            --primary: #0066FF;
-            --primary-dark: #0052CC;
-            --accent: #FF3B30;
-            --bg-dark: #0F172A;
-            --bg-card: #1E293B;
-            --text-main: #F8FAFC;
-            --text-muted: #94A3B8;
-            --border: #334155;
-            --badge: #10B981;
-        }
-
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            padding-bottom: 60px;
+            background-color: #f4f4f9;
+            padding: 20px 15px;
+            color: #333;
         }
 
-        /* Top Bar */
-        .top-bar {
-            background: #020617;
-            padding: 8px 5%;
-            font-size: 13px;
-            color: var(--text-muted);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .top-bar span span {
-            color: var(--badge);
-            font-weight: 600;
-        }
-
-        /* Navbar */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 800;
-            color: var(--text-main);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .search-bar {
-            position: relative;
-            width: 380px;
-        }
-
-        .search-bar input {
-            width: 100%;
-            padding: 10px 16px 10px 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 99px;
-            color: var(--text-main);
-            font-size: 14px;
-            outline: none;
-            transition: all 0.3s;
-        }
-
-        .search-bar input:focus {
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .cart-btn {
-            position: relative;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--border);
-            padding: 10px 18px;
-            border-radius: 99px;
-            color: var(--text-main);
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            transition: 0.2s;
-        }
-
-        .cart-btn:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .cart-count {
-            background: var(--accent);
-            color: white;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 10px;
-        }
-
-        /* Hero Banner */
-        .hero {
-            margin: 24px 5%;
-            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            right: -100px;
-            top: -100px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0,102,255,0.25) 0%, rgba(0,0,0,0) 70%);
-            pointer-events: none;
-        }
-
-        .hero-text {
-            max-width: 500px;
-            z-index: 1;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            background: rgba(0, 102, 255, 0.15);
-            color: var(--primary);
-            border: 1px solid rgba(0, 102, 255, 0.3);
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 6px 14px;
-            border-radius: 99px;
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-        }
-
-        .hero h1 {
-            font-size: 38px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 12px;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 99px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            transition: 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,102,255,0.3);
-        }
-
-        /* Filter Section */
-        .filter-section {
-            padding: 0 5%;
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .category-pills {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding-bottom: 8px;
-        }
-
-        .pill {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            padding: 8px 20px;
-            border-radius: 99px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-
-        .pill.active, .pill:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        /* Products Grid */
-        .catalog-container {
-            padding: 0 5%;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: 700;
+        h1 {
+            text-align: center;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            font-size: 22px;
+            color: #111;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 24px;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 16px;
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Container Katalog */
+        .catalog {
+            max-width: 500px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 20px;
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 102, 255, 0.5);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .card-badge {
-            position: absolute;
-            top: 24px;
-            left: 24px;
-            background: var(--badge);
-            color: #000;
-            font-size: 11px;
-            font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 6px;
-            text-transform: uppercase;
-            z-index: 2;
-        }
-
-        .card-badge.promo {
-            background: var(--accent);
-            color: white;
-        }
-
-        .img-container {
-            width: 100%;
-            height: 200px;
-            background: #0f172a;
+        /* Kartu Produk */
+        .card {
+            background: #ffffff;
+            border: 1px solid #ddd;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-            overflow: hidden;
-            position: relative;
+            padding: 16px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        .img-container img {
-            max-height: 80%;
-            max-width: 80%;
-            object-fit: contain;
-            transition: transform 0.3s;
+        /* Gambar HP */
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 15px;
+            object-fit: cover;
         }
 
-        .card:hover .img-container img {
-            transform: scale(1.08);
+        /* Nama HP */
+        .card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #000;
         }
 
-        .specs-tag {
-            font-size: 11px;
-            color: var(--primary);
-            background: rgba(0, 102, 255, 0.1);
-            padding: 4px 8px;
+        /* Keterangan Spesifikasi */
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .card ul li {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444;
+            padding: 4px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        /* Harga HP */
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d97706;
+            background: #fffbe3;
+            padding: 8px 12px;
             border-radius: 6px;
             display: inline-block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .product-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--text-main);
-        }
-
-        .product-desc {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-            line-height: 1.4;
-        }
-
-        .price-row {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
-        .current-price {
-            font-size: 18px;
-            font-weight: 800;
-            color: var(--text-main);
-        }
-
-        .old-price {
-            font-size: 13px;
-            color: var(--text-muted);
-            text-decoration: line-through;
-        }
-
-        .btn-buy {
-            width: 100%;
-            background: rgba(255,255,255,0.05);
-            color: var(--text-main);
-            border: 1px solid var(--border);
-            padding: 10px;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 13px;
-        }
-
-        .btn-buy:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: white;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 12px;
-                padding: 12px 5%;
-            }
-            .search-bar {
-                width: 100%;
-            }
-            .hero {
-                padding: 28px;
-            }
-            .hero h1 {
-                font-size: 26px;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Info Bar -->
-    <div class="top-bar">
-        <span>📍 Garansi Resmi Indonesia | <span>100% Original</span></span>
-        <span>🚚 Gratis Ongkir Seluruh Indonesia</span>
-    </div>
+    <h1>📱 Paksol HP Second</h1>
 
-    <!-- Header / Navbar -->
-    <header>
-        <a href="#" class="logo">
-            ⚡ Paksol <span>HP Second</span>
-        </a>
-        
-        <div class="search-bar">
-            <span class="search-icon">🔍</span>
-            <input type="text" placeholder="Cari iPhone, Samsung, Xiaomi...">
-        </div>
+    <div class="catalog">
 
-        <div class="nav-actions">
-            <button class="cart-btn" onclick="alert('Keranjang belanja Anda terbuka!')">
-                🛒 Keranjang
-                <span class="cart-count">3</span>
-            </button>
-        </div>
-    </header>
+        <!-- Produk 1: OPPO A6t 4G -->
+        <div class="card">
+            <!-- 1. GAMBAR HP -->
+            <img src="oppo.jpg" alt="OPPO A6t 4G">
+            
+            <!-- 2. SPESIFIKASI HP -->
+            <h2>OPPO A6t 4G</h2>
+            <ul>
+                <li>📱 <b>Layar:</b> 6,75" LCD, 120Hz</li>
+                <li>⚙️ <b>Chipset:</b> Snapdragon 685 4G</li>
+                <li>💾 <b>RAM/Storage:</b> 4+8 / 64 GB</li>
+                <li>📸 <b>Kamera Belakang:</b> 50 MP</li>
+                <li>🤳 <b>Kamera Depan:</b> 8 MP</li>
+                <li>🔋 <b>Baterai:</b> 6.500 mAh (45W Charging)</li>
+                <li>📶 <b>Jaringan:</b> 4G LTE</li>
+                <li>🤖 <b>OS:</b> Android 15 + ColorOS 15</li>
+                <li>💧 <b>Fitur:</b> IP65</li>
+                <li>🛡️ <b>Garansi:</b> Garansi Nasional Aktif s/d 23 April 2027</li>
+            </ul>
 
-    <!-- Hero Banner -->
-    <section class="hero">
-        <div class="hero-text">
-            <span class="hero-tag">🔥 Stok Terbaru</span>
-            <h1>Oppo A6t</h1>
-            <p>Bodi Titanium super tangguh. Chip A17 Pro revolusioner. Sistem kamera paling powerful sejauh ini.</p>
-            <button class="btn-primary" onclick="alert('Mengarahkan ke detail iPhone 15 Pro Max...')">Beli Sekarang — Rp 24.999.000</button>
-        </div>
-    </section>
-
-    <!-- Filter & Categories -->
-    <div class="filter-section">
-        <div class="category-pills">
-            <button class="pill active">Semua Merek</button>
-            <button class="pill">Apple</button>
-            <button class="pill">Samsung</button>
-            <button class="pill">Xiaomi</button>
-            <button class="pill">ASUS ROG</button>
-            <button class="pill">Aksesoris</button>
-        </div>
-    </div>
-
-    <!-- Main Product Catalog -->
-    <main class="catalog-container">
-        <div class="section-title">
-            <h2>Katalog Produk Populer</h2>
-            <span style="font-size: 13px; color: var(--text-muted);">Menampilkan 6 Produk</span>
-        </div>
-
-        <div class="grid">
-            <!-- Product 1 -->
-<div class="card">
-    <span class="card-badge promo">Garansi 2027</span>
-    <div class="img-container">
-        <img src="https://lh3.googleusercontent.com/d/1Xy_Jp4mD9R-C9Vz5bN_T1X1V7D6S4Wz0" alt="OPPO A6t 4G">
-    </div>
-    <div>
-        <span class="specs-tag">Snapdragon 685 4G | 4+8GB RAM</span>
-        <h3 class="product-title">OPPO A6t 4G</h3>
-        <p class="product-desc">
-            Layar: 6,75" 120Hz | Baterai Jumbo 6.500mAh<br>
-            Garansi Resmi Aktif s/d: 23 April 2027<br>
-            Kelengkapan: HP, Charger 45W, Box (seperti gambar).
-        </p>
-    </div>
-    <div>
-        <div class="price-row">
-            <span class="current-price">Rp 1.850.000</span>
-        </div>
-        <button class="btn-buy" onclick="addToCart('OPPO A6t 4G')">+ Tambah ke Keranjang</button>
-    </div>
-</div>
-
-            <!-- Product 2 -->
-            <div class="card">
-                <span class="card-badge">Ready Stock</span>
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=400&q=80" alt="Samsung S24 Ultra">
-                </div>
-                <div>
-                    <span class="specs-tag">Snapdragon 8 Gen 3 | 512GB</span>
-                    <h3 class="product-title">Samsung S24 Ultra</h3>
-                    <p class="product-desc">Dilengkapi Galaxy AI dan S-Pen terintegrasi.</p>
-                </div>
-                <div>
-                    <div class="price-row">
-                        <span class="current-price">Rp 21.499.000</span>
-                    </div>
-                    <button class="btn-buy" onclick="addToCart('Samsung S24 Ultra')">+ Tambah ke Keranjang</button>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="card">
-                <span class="card-badge promo">Best Seller</span>
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=400&q=80" alt="Xiaomi 14">
-                </div>
-                <div>
-                    <span class="specs-tag">Leica Optics | 12GB RAM</span>
-                    <h3 class="product-title">Xiaomi 14 Pro</h3>
-                    <p class="product-desc">Kamera profesional hasil kolaborasi dengan Leica.</p>
-                </div>
-                <div>
-                    <div class="price-row">
-                        <span class="current-price">Rp 12.499.000</span>
-                        <span class="old-price">Rp 13.999.000</span>
-                    </div>
-                    <button class="btn-buy" onclick="addToCart('Xiaomi 14 Pro')">+ Tambah ke Keranjang</button>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="card">
-                <span class="card-badge">Gaming Tech</span>
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" alt="ASUS ROG Phone 8">
-                </div>
-                <div>
-                    <span class="specs-tag">165Hz AMOLED | 16GB RAM</span>
-                    <h3 class="product-title">ASUS ROG Phone 8</h3>
-                    <p class="product-desc">HP Gaming paling powerful dengan pendingin AniMe Vision.</p>
-                </div>
-                <div>
-                    <div class="price-row">
-                        <span class="current-price">Rp 15.999.000</span>
-                    </div>
-                    <button class="btn-buy" onclick="addToCart('ASUS ROG Phone 8')">+ Tambah ke Keranjang</button>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="card">
-                <span class="card-badge">Populer</span>
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=400&q=80" alt="Google Pixel 8 Pro">
-                </div>
-                <div>
-                    <span class="specs-tag">Google Tensor G3 | Camera AI</span>
-                    <h3 class="product-title">Google Pixel 8 Pro</h3>
-                    <p class="product-desc">Pengalaman Android murni dengan kemampuan fotografi AI terbaik.</p>
-                </div>
-                <div>
-                    <div class="price-row">
-                        <span class="current-price">Rp 16.299.000</span>
-                    </div>
-                    <button class="btn-buy" onclick="addToCart('Google Pixel 8 Pro')">+ Tambah ke Keranjang</button>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="card">
-                <span class="card-badge promo">Hemat 15%</span>
-                <div class="img-container">
-                    <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=400&q=80" alt="Nothing Phone (2)">
-                </div>
-                <div>
-                    <span class="specs-tag">Glyph Interface | Snapdragon 8+</span>
-                    <h3 class="product-title">Nothing Phone (2)</h3>
-                    <p class="product-desc">Desain transparan ikonik dengan indikator lampu Glyph unik.</p>
-                </div>
-                <div>
-                    <div class="price-row">
-                        <span class="current-price">Rp 9.999.000</span>
-                        <span class="old-price">Rp 11.500.000</span>
-                    </div>
-                    <button class="btn-buy" onclick="addToCart('Nothing Phone (2)')">+ Tambah ke Keranjang</button>
-                </div>
+            <!-- 3. HARGA HP -->
+            <div class="price">
+                Harga: Rp 1.850.000
             </div>
         </div>
-    </main>
 
-    <script>
-        function addToCart(productName) {
-            alert(productName + ' telah ditambahkan ke keranjang!');
-        }
-    </script>
+    </div>
+
 </body>
 </html>
